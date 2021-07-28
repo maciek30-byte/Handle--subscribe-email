@@ -4,6 +4,7 @@ console.log(contactform)
 const email = document.getElementById('email')
 
 contactform.addEventListener('submit', (e)=>{
+  window.alert('email is send')
   e.preventDefault();
   let userEmail = email.value;
 
