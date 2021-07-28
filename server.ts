@@ -15,16 +15,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+const sendSecondEmail=async (subscriberEmail:string,transporter:any) =>{
+  app.get('/confirm',(req:any,res:any)=>{
+    EmailCreator.sendEmail(host.username, subscriberEmail,'<p>subscribe is completed<p/>>',transporter)
+
+  })
+
+}
+
 
 app.post("/email", async (req: any, res: any) => {
   const subscriberEmail:string = req.body.userEmail;
   const transporter = EmailCreator.createTransporter(host);
   await EmailCreator.sendEmail(host.username,subscriberEmail,message,transporter)
-
-
-
-
-
+  await sendSecondEmail(subscriberEmail,transporter)
 });
 
 // async function sendSecondEmail(subscriber:User) {
