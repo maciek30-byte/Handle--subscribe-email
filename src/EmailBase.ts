@@ -5,10 +5,10 @@ export const host: User = {
     pass: "Cola1234@",
 };
 
-export const subscriber: User = {
-    username: "mailofcola2@gmail.com",
-    pass: "Cola1234@",
-};
+// export const subscriber: User = {
+//     username: "mailofcola2@gmail.com",
+//     pass: "Cola1234@",
+// };
 
 export const htmlLink = `
 <a href='http://localhost:3000/confirm'>Click me</a>`;

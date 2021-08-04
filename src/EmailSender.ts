@@ -1,4 +1,5 @@
 import {User} from "./EmailBase";
+import {nodemailer} from "../config";
 
 class EmailSender {
     static createTransporter(host: User) {
