@@ -2,7 +2,7 @@ import {User} from "./EmailBase";
 import {nodemailer} from "../config";
 
 class EmailSender {
-    static createTransporter(host: User) {
+   static createTransporter(host: User) {
         return nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 587,
